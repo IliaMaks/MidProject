@@ -1,0 +1,17 @@
+
+*.pyc
+__pycache__
+*.log
+*.tmp
+
+
+.git
+.gitignore
+
+
+node_modules
+venv
+env
+*.zip
+*.tar
+

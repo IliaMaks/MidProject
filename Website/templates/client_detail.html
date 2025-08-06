@@ -1,0 +1,40 @@
+
+{% extends "layout.html" %}
+{% block title %}Client Details{% endblock %}
+
+{% block content %}
+<h2 class="mb-3">Client: {{ client.name }}</h2>
+<p><strong>Email:</strong> {{ client.email }}</p>
+<p><strong>Phone:</strong> {{ client.phone }}</p>
+
+<h4 class="mt-4">Loans</h4>
+{% if loans %}
+<div class="row">
+  <div class="col-md-8">
+    <table class="table table-striped table-bordered table-hover">
+      <thead class="table-light">
+        <tr><th>ID</th><th>Amount</th><th>Rate</th><th>Term</th><th>Status</th><th></th></tr>
+      </thead>
+      <tbody>
+        {% for loan in loans %}
+        <tr>
+          <td>{{ loan.id }}</td>
+          <td>{{ loan.amount }}</td>
+          <td>{{ loan.interest_rate }}%</td>
+          <td>{{ loan.term_months }}</td>
+          <td>{{ loan.status }}</td>
+          <td>
+            <a class="btn btn-sm btn-outline-secondary" href="{{ url_for('loan_amortization', loan_id=loan.id) }}">
+              Amortization
+            </a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% else %}
+<p>No loans for this client.</p>
+{% endif %}
+{% endblock %}

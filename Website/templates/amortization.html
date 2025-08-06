@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+{% block title %}Amortization Schedule{% endblock %}
+
+{% block content %}
+<h2 class="mb-4">Amortization Schedule</h2>
+
+<div class="row mb-3">
+  <div class="col-md-8">
+    <p><strong>Client:</strong> {{ client_name }}</p>
+    <p>
+      <strong>Loan Amount:</strong> ${{ loan.amount }} |
+      <strong>Rate:</strong> {{ loan.interest_rate }}% |
+      <strong>Term:</strong> {{ loan.term_months }} months
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-md-10">
+    <table class="table table-sm table-bordered">
+      <thead class="table-light">
+        <tr>
+          <th>Month</th>
+          <th>Payment</th>
+          <th>Principal</th>
+          <th>Interest</th>
+          <th>Balance</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for row in schedule %}
+        <tr>
+          <td>{{ row.month }}</td>
+          <td>${{ row.payment }}</td>
+          <td>${{ row.principal }}</td>
+          <td>${{ row.interest }}</td>
+          <td>${{ row.balance }}</td>
+          <td>
+            {% if row.status == 'paid' %}
+              <span class="badge bg-success">Paid</span>
+            {% else %}
+              <span class="badge bg-warning text-dark">Pending</span>
+            {% endif %}
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
