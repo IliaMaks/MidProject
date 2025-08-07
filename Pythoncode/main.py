@@ -68,11 +68,11 @@ def main():
         elif choice == "5":
             taken = functions.apply_payments(loans)
             treasury_balance += taken
-            print(f"Collected ${taken:.2f}. Treasury now: ${treasury_balance:.2f}")
+            print(f"Collected ${taken:.2f}. Bank: ${treasury_balance:.2f}")
 
         elif choice == "6":
             bank_data = functions.get_bank_data(loans, clients)
-            print(f"\nTreasury: ${treasury_balance:.2f}")
+            print(f"\nBank: ${treasury_balance:.2f}")
             print(f"Total loan balance: ${bank_data['total_loan_balance']:.2f}")
             print(f"Due this round: ${bank_data['total_due']:.2f}")
             for p in bank_data['payments']:

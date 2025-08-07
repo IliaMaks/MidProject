@@ -14,7 +14,7 @@ S3_BUCKET="devops-midterm-app-deploy-bucket-$ACCOUNT_ID"
 S3_KEY="$APP_NAME/$ZIP_FILE"
 SOLUTION_STACK="64bit Amazon Linux 2 v4.2.2 running Docker"
 
-# Ensure zip
+# Ensure zip  -->   winget install --id=GnuWin32.Zip
 if ! command -v zip &>/dev/null; then
   ZIP_PATH="/c/Program Files (x86)/GnuWin32/bin"
   [[ -f "$ZIP_PATH/zip.exe" ]] && export PATH="$PATH:$ZIP_PATH" || {
