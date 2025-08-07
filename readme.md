@@ -143,7 +143,4 @@ DevOps-Midterm-Project/
 
 ---
 
-## License
-
-This project is licensed for educational use only.
 
