@@ -6,14 +6,14 @@ This project is a full-stack bank loan management system built with **Flask**, D
 
 ## Features
 
-- 📋 Client management (add/view clients)
-- 💰 Loan management (add/view loans)
-- 📉 Amortization schedule per loan
-- 🏦 Bank treasury overview with payment application
-- 🔐 Secure with `session`-based state storage for isolation per user
-- 🐳 Dockerized application with automated deployment
-- 🎨 Styled with Bootstrap for responsive UI
-- ☁️ Hosted on AWS Elastic Beanstalk via ECR and S3
+-  Client management (add/view clients)
+-  Loan management (add/view loans)
+-  Amortization schedule per loan
+-  Bank treasury overview with payment application
+-  Secure with `session`-based state storage for isolation per user
+-  Dockerized application with automated deployment
+-  Styled with Bootstrap for responsive UI
+-  Hosted on AWS Elastic Beanstalk via ECR and S3
 
 ---
 
