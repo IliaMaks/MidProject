@@ -11,6 +11,7 @@ WORKDIR /app
 
 # Python logic
 COPY ./Pythoncode/functions.py ./functions.py
+COPY ./Pythoncode/test_functions.py ./test_functions.py
 
 # Flask app
 COPY ./Website/app.py ./app.py
@@ -19,7 +20,9 @@ COPY ./Website/app.py ./app.py
 COPY ./Website/templates ./templates
 COPY ./Website/static ./static
 
-RUN pip3 install --no-cache-dir flask gunicorn
+RUN pip3 install --no-cache-dir flask gunicorn pytest
 
 EXPOSE 80
+
+RUN pytest
 CMD ["gunicorn", "-b", "0.0.0.0:80", "app:app"]
